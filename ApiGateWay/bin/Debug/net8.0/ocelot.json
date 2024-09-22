@@ -1,0 +1,83 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/Storage/{method}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7296
+        }
+      ],
+      "UpstreamPathTemplate": "/Storage/{method}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "SwaggerKey": "Storages"
+    },
+    {
+      "DownstreamPathTemplate": "/ProductsAndGroups/{method}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7109
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductsAndGroups/{method}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "SwaggerKey": "ProductsAndGroups"
+    },
+    {
+      "DownstreamPathTemplate": "/Placement/{method}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7045
+        }
+      ],
+      "UpstreamPathTemplate": "/Placement/{method}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "SwaggerKey": "Placements"
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7082"
+  },
+
+  "SwaggerEndPoints": [
+    {
+      "Key": "Storages",
+      "TransformByOcelotConfig": "false",
+      "Config": [
+        {
+          "Name": "Storages API",
+          "Version": "v1",
+          "Url": "https://localhost:7296/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ProductsAndGroups",
+      "TransformByOcelotConfig": "false",
+      "Config": [
+        {
+          "Name": "ProductsAndGroups API",
+          "Version": "v1",
+          "Url": "https://localhost:7109/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Placements",
+      "TransformByOcelotConfig": "false",
+      "Config": [
+        {
+          "Name": "Placements API",
+          "Version": "v1",
+          "Url": "https://localhost:7045/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
